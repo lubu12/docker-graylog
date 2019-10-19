@@ -26,6 +26,7 @@ services:
     volumes:
       - graylog_journal:/usr/share/graylog/data/journal
       - ./graylog/config:/usr/share/graylog/data/config
+# Environment variables for Graylog configuration file are no longer needed when using custom configuration files      
 #    environment:
       # CHANGE ME (must be at least 16 characters)!
 #      - GRAYLOG_PASSWORD_SECRET=somepasswordpepper
