@@ -1,7 +1,11 @@
-# Setup Graylog via docker-compose
-Setup Graylog with external url setting and persisting data via docker-compose
+# Setup Graylog with nginx as reverse proxy via docker-compose
+Setup Graylog with nginx as reverse proxy and persisting data via docker-compose
 
-Reference: https://docs.graylog.org/en/3.1/pages/installation/docker.html
+Reference:
+
+https://docs.graylog.org/en/3.1/pages/installation/docker.html
+http://docs.graylog.org/en/2.2/pages/configuration/web_interface.html#nginx
+
 Tested at AWS EC2 - Amazon Linux 2
 
 
@@ -31,9 +35,16 @@ sudo chown -R graylog:graylog ./graylog/config
 ## Update Graylog configuration file
 In order to make Graylog accessible from external network interface, `http_external_uri` is needed to be set as the public IP of your instance.
 
-At `./graylog/config/graylog.conf`
+### If you don't want to use nginx reverse proxy...
+You can access directly at port 9000. Just put the external domain name or IP at `http_external_url` in the configuration file at `./graylog/config/graylog.conf`
 ```
 http_external_uri = http://YOUR_PUBLIC_IP:9000/
+```
+
+### If you want to use nginx reverse proxy...
+At `./graylog/config/graylog.conf`
+```
+http_external_uri = http://127.0.0.1:9000/
 ```
 
 ## Build and run with docker-compose
