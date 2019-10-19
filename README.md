@@ -36,12 +36,12 @@ At `./graylog/config/graylog.conf`
 http_external_uri = http://YOUR_PUBLIC_IP:9000/
 ```
 
-Build and run with docker-compose
+## Build and run with docker-compose
 ```
 docker-compose up -d
 ```
 
-Rebuild the docker image after configuration file is changed
+## Rebuild the docker image after configuration file is changed
 ```
 docker-compose down
 docker-compose up --build -d
