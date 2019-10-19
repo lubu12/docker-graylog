@@ -47,6 +47,24 @@ At `./graylog/config/graylog.conf`
 http_external_uri = http://127.0.0.1:9000/
 ```
 
+## Create environment variables at .env file at working directory
+* `NGINX_VERSION` - Nginx (alpine) docker image tag, e.g., `mainline-alpine`
+* `NGINX_PORT` - Default port 80
+* `DOCKER_NGINX_PORT` - Default port 8080
+* `PHP_FPM_VERSION` - PHP-FPM docker image tag, e.g., `7.3-fpm-alpine`
+* `HTML_VOLUME` - Full path of the html root for nginx. Default value is `/var/www/html`
+* `GRAYLOG_URL` - Full URL for Graylog, e.g., `http://YOUR_PUBLIC_IP`
+
+Example:
+```
+NGINX_VERSION=mainline-alpine
+NGINX_PORT=80
+DOCKER_NGINX_PORT=8080
+PHP_FPM_VERSION=7.3-fpm-alpine
+HTML_VOLUME=/var/www/html
+GRAYLOG_URL=http://YOUR_PUBLIC_IP
+```
+
 ## Build and run with docker-compose
 ```
 docker-compose up -d
