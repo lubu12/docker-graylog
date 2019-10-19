@@ -36,6 +36,17 @@ At `./graylog/config/graylog.conf`
 http_external_uri = http://YOUR_PUBLIC_IP:9000/
 ```
 
+Build and run with docker-compose
+```
+docker-compose up -d
+```
+
+Rebuild the docker image after configuration file is changed
+```
+docker-compose down
+docker-compose up --build -d
+```
+
 ## Troubleshooting
 Graylog web interface can be accessed from the value you set at `http_external_uri`, i.e., `http://YOUR_PUBLIC_IP:9000/` If it is not accessible, try view the log by running the command `docker logs YOUR_GRAYLOG_DOCKER_CONTAINER_NAME -f`. Make sure the Graylog server is up and running. When you run the command `curl -v 127.0.0.1:9000`, you should be able to see something as follow:
 
