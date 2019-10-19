@@ -19,7 +19,8 @@ The newly created directory `./graylog/config/` with the custom configuration fi
 
 This can be done by adding an entry to the volumes section of the `docker-compose.yml` file.
 
-Warning: Graylog is running as USER graylog with the ID `1100` in Docker. That ID need to be able to read the configuration files you place into the container. USER graylog can be created and ownership of the configuration can be set by following commands.
+### Warning
+Graylog is running as USER graylog with the ID `1100` in Docker. That ID need to be able to read the configuration files you place into the container. USER graylog can be created and ownership of the configuration can be set by following commands.
 
 ```
 sudo groupadd -g 1100 graylog
