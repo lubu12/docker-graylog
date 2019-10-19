@@ -1,4 +1,6 @@
-# Setup Graylog with external url setting and persisting data via docker-compose
+# Setup Graylog via docker-compose
+Setup Graylog with external url setting and persisting data via docker-compose
+
 Reference: https://docs.graylog.org/en/3.1/pages/installation/docker.html
 Tested at AWS EC2 - Amazon Linux 2
 
