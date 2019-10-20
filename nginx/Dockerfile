@@ -17,10 +17,8 @@ RUN apk update --no-cache
 
 COPY nginx.conf /etc/nginx/nginx.conf
 
-# Replace the HTML_ROOT by environment variable
 # Use ~ instead of / as the delimiter for sed since html_root is having / character
-RUN sed -i "s~HTML_ROOT~$html_volume~g" /etc/nginx/nginx.conf
-RUN sed -i "s~GRAYLOG_URL~$graylog_url~g" /etc/nginx/nginx.conf
+RUN sed -i "s~HTML_ROOT~$html_volume~g; s~GRAYLOG_URL~$graylog_url~g" /etc/nginx/nginx.conf
  
 # Run as non-root - http://pjdietz.com/2016/08/28/nginx-in-docker-without-root.html
 RUN addgroup -g 3000 app \
