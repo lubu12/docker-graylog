@@ -6,8 +6,8 @@ services:
       dockerfile: Dockerfile
       args:
         version: ${NGINX_VERSION}
-    environment:
-     - html_volume=${HTML_VOLUME}
+        html_volume: ${HTML_VOLUME}
+        graylog_url: ${GRAYLOG_URL}
     ports:
      - "${NGINX_PORT}:${DOCKER_NGINX_PORT}"
     volumes:
