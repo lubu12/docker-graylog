@@ -38,7 +38,7 @@ In order to make Graylog accessible from external network interface, `http_exter
 ### If you don't want to use nginx reverse proxy...
 You can access directly at port 9000. Just put the external domain name or IP at `http_external_url` in the configuration file at `./graylog/config/graylog.conf`
 ```
-http_external_uri = http://YOUR_PUBLIC_IP:9000/
+http_external_uri = http://YOUR_HOSTNAME:9000/
 ```
 
 ### If you want to use nginx reverse proxy...
@@ -62,7 +62,7 @@ NGINX_PORT=80
 DOCKER_NGINX_PORT=8080
 PHP_FPM_VERSION=7.3-fpm-alpine
 HTML_VOLUME=/var/www/html
-GRAYLOG_URL=http://YOUR_PUBLIC_IP/graylog/
+GRAYLOG_URL=http://YOUR_HOSTNAME/graylog/
 ```
 
 ## Build and run with docker-compose
