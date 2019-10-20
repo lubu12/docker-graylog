@@ -1,5 +1,5 @@
-# Setup Graylog with nginx as reverse proxy in subfolder
-Setup Graylog with nginx as reverse proxy in subfolder and persisting data via docker-compose
+# Setup Graylog 3.1 with nginx as reverse proxy in subfolder
+Setup Graylog 3.1 with nginx as reverse proxy in subfolder and persisting data via docker-compose
 
 Reference:
 
