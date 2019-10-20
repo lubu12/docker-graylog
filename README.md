@@ -1,10 +1,10 @@
-# Setup Graylog with nginx as reverse proxy via docker-compose
-Setup Graylog with nginx as reverse proxy and persisting data via docker-compose
+# Setup Graylog with nginx as reverse proxy in subfolder
+Setup Graylog with nginx as reverse proxy in subfolder and persisting data via docker-compose
 
 Reference:
 
 https://docs.graylog.org/en/3.1/pages/installation/docker.html
-http://docs.graylog.org/en/2.2/pages/configuration/web_interface.html#nginx
+https://docs.graylog.org/en/3.1/pages/configuration/web_interface.html
 
 Tested at AWS EC2 - Amazon Linux 2
 
@@ -53,7 +53,7 @@ http_external_uri = http://127.0.0.1:9000/
 * `DOCKER_NGINX_PORT` - Default port 8080
 * `PHP_FPM_VERSION` - PHP-FPM docker image tag, e.g., `7.3-fpm-alpine`
 * `HTML_VOLUME` - Full path of the html root for nginx. Default value is `/var/www/html`
-* `GRAYLOG_URL` - Full URL for Graylog, e.g., `http://YOUR_PUBLIC_IP`
+* `GRAYLOG_URL` - Full URL for Graylog, e.g., `http://YOUR_PUBLIC_IP/graylog/`
 
 Example:
 ```
@@ -62,7 +62,7 @@ NGINX_PORT=80
 DOCKER_NGINX_PORT=8080
 PHP_FPM_VERSION=7.3-fpm-alpine
 HTML_VOLUME=/var/www/html
-GRAYLOG_URL=http://YOUR_PUBLIC_IP
+GRAYLOG_URL=http://YOUR_PUBLIC_IP/graylog/
 ```
 
 ## Build and run with docker-compose
@@ -74,6 +74,11 @@ docker-compose up -d
 ```
 docker-compose down
 docker-compose up --build -d
+```
+
+## URL to access Graylog
+```
+http://YOUR_HOSTNAME/graylog
 ```
 
 ## Troubleshooting
